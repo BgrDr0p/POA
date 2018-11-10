@@ -1,6 +1,7 @@
 package fr.parisnanterre.miage.poa.shapes.impl;
 
 public class Point2D {
+
     private double x;
     private double y;
 
@@ -24,5 +25,4 @@ public class Point2D {
     public void setY(double y) {
         this.y = y;
     }
-
 }

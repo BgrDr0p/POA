@@ -1,6 +1,7 @@
 package fr.parisnanterre.miage.poa.shapes.impl;
 
-public class Rectangle {
+public class Rectangle extends Shape2D {
+
     private double length;
     private double width;
 
@@ -21,4 +22,7 @@ public class Rectangle {
     {
         return this.width*this.length;
     }
+}
+
+
 }
