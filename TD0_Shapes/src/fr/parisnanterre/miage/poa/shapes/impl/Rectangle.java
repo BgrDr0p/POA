@@ -6,11 +6,12 @@ public class Rectangle extends Shape2D {
 
    private double length,width;
 
-    public Rectangle(double length, double width) {
+    public Rectangle(Point2D refPoint,double length, double width) {
+        super(refPoint);
         this.length = length;
         this.width = width;
     }
-    public Rectangle(){}
+
 
     public double getLength() {
         return length;
