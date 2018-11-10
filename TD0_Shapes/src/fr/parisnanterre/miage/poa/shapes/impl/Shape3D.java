@@ -1,9 +1,9 @@
 package fr.parisnanterre.miage.poa.shapes.impl;
 
 
+import fr.parisnanterre.miage.poa.shapes.api.Translatable3D;
 
-
-public abstract class Shape3D {
+public abstract class Shape3D extends Shape implements Translatable3D {
     private Point3D refPoint;
 
     public Shape3D()
