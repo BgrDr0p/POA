@@ -1,28 +1,51 @@
-package fr.parisnanterre.miage.poa.shapes.impl;
+    package fr.parisnanterre.miage.poa.shapes.impl;
 
-public class Point2D {
+    public class Point2D {
 
-    private double x;
-    private double y;
+        private double x,y;
 
-    public Point2D(double x, double y) {
+    public Point2D (double x, double y)
+    {
         this.x = x;
         this.y = y;
     }
 
-    public double getX() {
-        return x;
+        public Point2D() {}
+
+        public double getX() { return this.x; }
+    public double getY() { return this.y; }
+
+    public void setX(double x) { this.x = x; }
+    public void setY(double y) { this.y = y; }
+
+    public void translate(double x , double y)
+    {
+        return;
     }
 
-    public void setX(double x) {
-        this.x = x;
+    public boolean isOrigin(boolean Origin)
+    {
+        if (this.x == 0 && this.y == 0)
+        {
+            Origin = true;
+
+        }
+        else
+        {
+            Origin = false;
+        }
+        return Origin;
+
+
+    }
+    public void distance(double Point2D)
+    {
+        return;
     }
 
-    public double getY() {
-        return y;
-    }
+    @Override
+    public String toString() {
+            return String.format("(%d, %d)", getX(), getY());
+        }
 
-    public void setY(double y) {
-        this.y = y;
     }
-}

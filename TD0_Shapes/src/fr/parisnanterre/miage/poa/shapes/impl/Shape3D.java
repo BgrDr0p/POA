@@ -1,12 +1,29 @@
 package fr.parisnanterre.miage.poa.shapes.impl;
 
+
+
+
 public abstract class Shape3D {
-    public abstract double volume();
+    private Point3D refPoint;
 
-    public abstract void translate (int dx, int dy);
-
-    @Override
-    public double surface() {
-        return 0;
+    public Shape3D()
+    {
+        this.refPoint = refPoint;
     }
+
+    public Point3D getrefPoint() {return this.refPoint;}
+    public void setrefPoint(Point3D refPoint) {this.refPoint = refPoint;}
+
+    public double volume()
+    {
+        return 0;
+
+    }
+    public Point3D getRefPoint()
+    {
+        return this.refPoint;
+    }
+
+
+
 }

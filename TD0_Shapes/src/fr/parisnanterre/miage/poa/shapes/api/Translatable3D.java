@@ -1,4 +1,4 @@
 package fr.parisnanterre.miage.poa.shapes.api;
 
-public interface Translatable2D {
+public interface Translatable3D {
 }
