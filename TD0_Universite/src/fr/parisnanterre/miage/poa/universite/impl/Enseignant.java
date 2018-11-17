@@ -1,5 +1,6 @@
 package fr.parisnanterre.miage.poa.universite.impl;
 
+import fr.parisnanterre.miage.poa.universite.api.Departement;
 import fr.parisnanterre.miage.poa.universite.api.IEnseignant;
 
 import java.util.Date;
@@ -8,8 +9,8 @@ public class Enseignant extends Personnel implements IEnseignant {
     private Date dateRecrutement;
     private double salaire;
 
-    public Enseignant(String nom, String prenom, String numeroSecu, Date dateRecrutement, double salaire) {
-        super(nom, prenom, numeroSecu);
+    public Enseignant(String nom, String prenom, String numeroSecu, Date dateRecrutement, Departement departement, double salaire) {
+        super(nom, prenom, numeroSecu,departement);
         this.dateRecrutement = dateRecrutement;
         this.salaire = salaire;
     }

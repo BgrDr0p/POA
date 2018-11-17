@@ -1,5 +1,6 @@
 package fr.parisnanterre.miage.poa.universite.impl;
 
+import fr.parisnanterre.miage.poa.universite.api.Departement;
 import fr.parisnanterre.miage.poa.universite.api.IEnseignantPermanent;
 import java.util.Date;
 
@@ -9,8 +10,8 @@ public class EnseignantPermanent extends Enseignant implements IEnseignantPerman
 
 
 
-    public EnseignantPermanent(String nom, String prenom, String numeroSecu, Date dateRecrutement, double salaire, String domaineRecherche) {
-        super(nom, prenom, numeroSecu, dateRecrutement, salaire);
+    public EnseignantPermanent(String nom, String prenom, String numeroSecu, Date dateRecrutement, Departement departement, double salaire, String domaineRecherche) {
+        super(nom, prenom, numeroSecu, dateRecrutement, departement,salaire);
         this.domaineRecherche = domaineRecherche;
     }
 
