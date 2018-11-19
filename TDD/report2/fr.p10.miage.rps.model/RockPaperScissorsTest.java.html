@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RockPaperScissorsTest.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">TDD$RockPaperScissorsTest.exec</a> &gt; <a href="index.source.html" class="el_package">fr.p10.miage.rps.model</a> &gt; <span class="el_source">RockPaperScissorsTest.java</span></div><h1>RockPaperScissorsTest.java</h1><pre class="source lang-java linenums">package fr.p10.miage.rps.model;
+
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import static org.testng.Assert.*;
+
+<span class="fc" id="L10">public class RockPaperScissorsTest {</span>
+    RockPaperScissors rps;
+
+    @BeforeMethod
+    public void setUp() throws Exception{
+<span class="fc" id="L15">        rps = new RockPaperScissors();</span>
+<span class="fc" id="L16">    }</span>
+
+    @AfterMethod
+    public void tearDown()throws Exception {
+<span class="fc" id="L20">        rps = null;</span>
+<span class="fc" id="L21">    }</span>
+
+    @Test
+    public void testPlay()throws Exception {
+<span class="fc" id="L25">        assertEquals(rps.play(RPSEnum.ROCK,RPSEnum.SCISSORS),Result.WIN);</span>
+<span class="fc" id="L26">    }</span>
+
+
+    @Test
+    public void testPlay2()throws Exception {
+<span class="fc" id="L31">        assertEquals(rps.play(RPSEnum.ROCK,RPSEnum.PAPER),Result.LOST);</span>
+<span class="fc" id="L32">    }</span>
+
+    @Parameters({&quot;paper&quot;,&quot;rock&quot;})
+    @Test
+    public void testWinPlay(String p1, String p2){
+<span class="fc" id="L37">        assertEquals(rps.play(RPSEnum.valueOf(p1), RPSEnum.valueOf(p2)),Result.WIN);</span>
+
+<span class="fc" id="L39">    }</span>
+    @Parameters({&quot;paper&quot;,&quot;paper&quot;})
+    @Test
+    public void TestTiePlay(String p1,String p2)
+    {
+<span class="fc" id="L44">        assertEquals(rps.play(RPSEnum.valueOf(p1), RPSEnum.valueOf(p2)),Result.TIE);</span>
+<span class="fc" id="L45">    }</span>
+
+    @Parameters({&quot;rock&quot;,&quot;paper&quot;})
+    @Test
+    public void TestLosePlay(String p1,String p2)
+    {
+<span class="fc" id="L51">        assertEquals(rps.play(RPSEnum.valueOf(p1), RPSEnum.valueOf(p2)),Result.LOST);</span>
+<span class="fc" id="L52">    }</span>
+
+    @Test ( dataProvider = &quot;winData&quot;)
+    public Object[][] createWinData() {
+<span class="nc" id="L56">        return new Object[][]{{RPSEnum.PAPER, RPSEnum.ROCK},{RPSEnum.ROCK, RPSEnum.SCISSORS},{RPSEnum.SCISSORS, RPSEnum.PAPER}};</span>
+    }
+
+    @Test ( dataProvider = &quot;tieData&quot;)
+    public Object[][] createTieData() {
+<span class="nc" id="L61">        return new Object[][]{{RPSEnum.PAPER, RPSEnum.ROCK},{RPSEnum.ROCK, RPSEnum.SCISSORS},{RPSEnum.SCISSORS, RPSEnum.PAPER}};</span>
+    }
+
+    @Test ( dataProvider = &quot;loseData&quot;)
+    public Object[][] createLoseData() {
+<span class="nc" id="L66">        return new Object[][]{{RPSEnum.PAPER, RPSEnum.ROCK},{RPSEnum.ROCK, RPSEnum.SCISSORS},{RPSEnum.SCISSORS, RPSEnum.PAPER}};</span>
+    }
+
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.1.201803210924</span></div></body></html>

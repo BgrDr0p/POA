@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RockPaperScissors.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">TDD$RockPaperScissorsTest.exec</a> &gt; <a href="index.source.html" class="el_package">fr.p10.miage.rps.model</a> &gt; <span class="el_source">RockPaperScissors.java</span></div><h1>RockPaperScissors.java</h1><pre class="source lang-java linenums">package fr.p10.miage.rps.model;
+
+<span class="fc" id="L3">public class RockPaperScissors {</span>
+
+    Result play(RPSEnum p1, RPSEnum p2)
+    {
+<span class="fc bfc" id="L7" title="All 2 branches covered.">        if(p1 == p2) return Result.TIE;</span>
+<span class="fc bfc" id="L8" title="All 4 branches covered.">        if((p1.equals(RPSEnum.ROCK)&amp;&amp;p2.equals(RPSEnum.SCISSORS))) return Result.WIN;</span>
+<span class="pc bpc" id="L9" title="1 of 4 branches missed.">        else if((p1.equals(RPSEnum.PAPER)&amp;&amp;p2.equals(RPSEnum.ROCK))) return Result.WIN;</span>
+<span class="pc bpc" id="L10" title="3 of 4 branches missed.">        else if((p1.equals(RPSEnum.SCISSORS)&amp;&amp;p2.equals(RPSEnum.SCISSORS))) return Result.WIN;</span>
+<span class="fc" id="L11">        else return Result.LOST;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.1.201803210924</span></div></body></html>
